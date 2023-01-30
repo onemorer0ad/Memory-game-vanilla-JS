@@ -1,0 +1,73 @@
+.container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.card {
+  display: flex;
+  cursor: pointer;
+  width: calc(25% - 20px);
+  margin-right: 20px;
+  height: 200px;
+  margin-bottom: 10px;
+  background-color: brown;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d; /* this allows the children elements to also rotate in 3D */
+  transition: transform 0.5s ease-in-out;
+}
+
+.won {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: aqua;
+}
+
+.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.block {
+  transform: rotateY(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.card {
+  transition: transform 0.8s;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* задать класс flip который будет разворачивать карточку на 180 */
+.match {
+  pointer-events: none;
+}
