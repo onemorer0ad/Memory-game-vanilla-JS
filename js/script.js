@@ -44,9 +44,12 @@ function generateRandomCards() {
   shuffleCards(cards);
 } // End of generateRandomCards() function
 
-generateRandomCards(); // Call the function to generate random cards with pairs
-
 let newGame = function () {
+  cards = [];
+  generateRandomCards(); // Call the function to generate random cards with pairs
+
+  cardInsideWrapper = '';
+
   for (let item of cards) {
     cardInsideWrapper +=
       `<div id=${item.id} class="card">
@@ -117,6 +120,5 @@ const checkforMatch = () => {
 
 btn.addEventListener('click', function () {
   wonElem.classList.remove('active');
-  generateRandomCards();
   newGame();
 });
